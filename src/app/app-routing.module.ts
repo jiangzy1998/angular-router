@@ -12,7 +12,8 @@ const routes: Routes = [
     component:FirstComponent,
     children:[
       {
-        path:"child-a",
+        // 访问形式 http://localhost:4200/first-component/child-a/1
+        path:"child-a/:id",
          component:ChildAComponent,
       },
       {
