@@ -1,1 +1,16 @@
-<p>first works!</p>
+
+<!-- 嵌套路由,创建一些根组件之外的相对路由，这些嵌套路由类型称为子路由 -->
+<h2>First Component</h2>
+
+<nav>
+    <ul>
+        <li><a routerLink="child-a">Child A</a></li>
+        <li><a routerLink="child-b">Child B</a></li>
+
+        <!-- 使用相对路径 -->
+        <li><a routerLink="../second-component">Relative Route to second component</a></li>
+    </ul>
+</nav>
+
+
+<router-outlet></router-outlet>
