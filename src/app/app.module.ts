@@ -9,6 +9,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { ChildAComponent } from './child/child-a/child-a.component';
 import { ChildBComponent } from './child/child-b/child-b.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,12 +19,13 @@ import { ChildBComponent } from './child/child-b/child-b.component';
     PageNotFoundComponent,
     ChildAComponent,
     ChildBComponent
-  ],
+ ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+
 })
 export class AppModule { }

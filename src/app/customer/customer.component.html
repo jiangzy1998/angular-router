@@ -1,1 +1,62 @@
 <p>customer works!</p>
+
+<div>
+    <!-- 单独使用ng-container没有任何用处，可以当作一个tag而已 -->
+    <ng-container>
+        <p>My name is wyl.</p>
+        <p>What is you name?</p>
+    </ng-container>
+</div>
+
+<!-- 当我们需要如下遍历或者进行if判断的时候，可以承当一个载体的作用 -->
+<ul>
+    <ng-container *ngFor="let item of items">
+        <li>{{ item.name}}</li>
+        <li>{{ item.age}}</li>
+        <li>{{ item.sex}}</li>
+    </ng-container>
+</ul>
+
+<!-- ng-template 加上 ngIf 指令  -->
+<ng-template [ngIf]="true">
+    <p> ngIf with a ng-template.</p>
+</ng-template>
+
+<ng-container *ngIf="true">
+    <p> ngIf with an ng-container.</p>
+</ng-container>
+
+
+
+<!-- ng-content 里面设置了select,方便我们选择投影的内容（组件或者html里面的标签）  -->
+<!-- select 的属性不能设置为动态的 -->
+<ng-content select="[name=test]"></ng-content>
+<div name="test">我是第一号位置 div[name=test]</div>
+
+
+<!-- select标签或者组件的名字、或者class、或者属性他们都应该作用在直接子节点上 -->
+<!-- 可以通过 ngProjectAs 让 ng-content 的内容能正确的投射过来 -->
+<app-ng-content>
+    <ng-container ngProjectAs="app-ng-content-child">
+        <app-ng-content-child></app-ng-content-child>
+    </ng-container>
+   
+</app-ng-content>
+
+
+<!-- ng-content 包含组件的获取 -->
+<app-ng-content>
+    <app-ng-content-child #section_child_0></app-ng-content-child>
+    <app-ng-content-child #section_child_1></app-ng-content-child>
+</app-ng-content>
+
+<!-- <button (click)="load()">点击加载</button>
+<div [ngIf]="lessons" [ngIfElse]="loading">
+    <a>数据已经记载！</a>
+</div>
+
+<ng-template #loading>
+    <p>数据正在加载中。。。。</p>
+</ng-template> -->
+
+<app-ng-template></app-ng-template>
